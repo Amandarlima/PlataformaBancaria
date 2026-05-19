@@ -1,4 +1,4 @@
-# Plataforma Bancaria - Teste Frontend
+# Plataforma Bancaria 
 
 Aplicacao frontend que simula um banco digital com foco em clareza de codigo, validacoes de negocio e experiencia do usuario.
 
