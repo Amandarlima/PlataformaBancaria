@@ -21,6 +21,9 @@ Aplicacao frontend que simula um banco digital com foco em clareza de codigo, va
 - Responsividade para desktop e celular.
 - Alternancia de tema claro/escuro com persistencia no navegador.
 
+## Referencia visual
+As telas foram inspiradas em padroes visuais e de usabilidade de aplicativos bancarios como Itau e Inter.
+
 ## Decisoes tecnicas e compromissos
 - `useBankData` centraliza carga de conta/transacoes e atualizacao de estado apos transferencia.
   Isso evita logica duplicada no `App` e deixa os componentes de tela mais simples.
