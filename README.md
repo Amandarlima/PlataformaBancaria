@@ -22,7 +22,7 @@ Aplicacao frontend que simula um banco digital com foco em clareza de codigo, va
 - Alternancia de tema claro/escuro com persistencia no navegador.
 
 ## Referencia visual
-As telas foram inspiradas em padroes visuais e de usabilidade de aplicativos bancarios como Itau e Inter.
+As telas e funções foram inspiradas em padroes visuais e de usabilidade de aplicativos bancarios como Itau e Inter.
 
 ## Decisoes tecnicas e compromissos
 - `useBankData` centraliza carga de conta/transacoes e atualizacao de estado apos transferencia.
@@ -33,8 +33,7 @@ As telas foram inspiradas em padroes visuais e de usabilidade de aplicativos ban
   - `services` (simulacao de API e regras de transferencia)
   - `hooks` (orquestracao de estado)
   - `components` (camada visual)
-- Nao foi usado Next.js nesta entrega para manter foco em React + TypeScript e velocidade de execucao.
-  Em um cenario real, a migracao para Next seria direta.
+-  Optei por React + TypeScript por ser a stack em que tenho mais dominio hoje, para garantir uma entrega completa, com qualidade e dentro do prazo.
 
 ## Como executar
 1. Tenha Node.js 18+ instalado.
