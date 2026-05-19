@@ -58,13 +58,13 @@ export function Header({
         </button>
       </div>
 
-      <nav className="flex flex-wrap gap-2">
+      <nav className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             type="button"
             onClick={() => onChangeTab(tab.id)}
-            className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${
+            className={`w-full rounded-xl px-2 py-2 text-center text-sm font-semibold transition sm:w-auto sm:px-4 ${
               activeTab === tab.id
                 ? "bg-white text-bank-900"
                 : "bg-bank-700 text-white hover:bg-bank-500"

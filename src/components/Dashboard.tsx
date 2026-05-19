@@ -35,7 +35,7 @@ export function Dashboard({ account, transactions }: DashboardProps) {
 
       <article className="rounded-2xl bg-white p-5 shadow dark:bg-slate-900">
         <h3 className="m-0 text-sm text-slate-500 dark:text-slate-400">Ultimas movimentacoes observadas</h3>
-        <p className="m-0 mt-2 text-sm text-slate-700 dark:text-slate-300">
+        <p className="m-0 mt-2 text-sm text-slate-700 break-words dark:text-slate-300">
           {latestDescriptions.length > 0
             ? latestDescriptions.join("  |  ")
             : "Sem movimentacoes registradas no momento."}

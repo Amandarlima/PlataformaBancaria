@@ -8,7 +8,7 @@ import { useBankData } from "./hooks/useBankData";
 type Tab = "dashboard" | "transactions" | "transfer";
 
 export default function App() {
-  const larguraLayout = "mx-auto w-[min(96vw,1700px)]";
+  const larguraLayout = "mx-auto w-full max-w-[1700px]";
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
   const [modoEscuro, setModoEscuro] = useState(() => {
     if (typeof window === "undefined") {
@@ -40,7 +40,7 @@ export default function App() {
 
   if (accountError && !isLoadingAccount && !account) {
     return (
-      <main className={`${larguraLayout} flex min-h-screen flex-col items-start justify-center gap-4 p-4`}>
+      <main className={`${larguraLayout} flex min-h-screen flex-col items-start justify-center gap-4 px-2 py-4 sm:p-4`}>
         <h1 className="m-0 text-2xl font-bold text-slate-800 dark:text-slate-100">Nao foi possivel carregar sua conta.</h1>
         <p className="m-0 text-sm text-red-700">{accountError}</p>
         <button
@@ -56,7 +56,7 @@ export default function App() {
 
   if (isLoadingAccount || !account) {
     return (
-      <main className={`${larguraLayout} p-4`}>
+      <main className={`${larguraLayout} px-2 py-4 sm:p-4`}>
         <section className="animate-pulse rounded-2xl bg-slate-200 p-6 dark:bg-slate-800">
           <div className="h-8 w-64 rounded-lg bg-slate-300 dark:bg-slate-700" />
           <div className="mt-3 h-5 w-48 rounded-lg bg-slate-300 dark:bg-slate-700" />
@@ -71,7 +71,7 @@ export default function App() {
   }
 
   return (
-    <main className={`${larguraLayout} flex min-h-screen flex-col gap-4 p-4 pb-8`}>
+    <main className={`${larguraLayout} flex min-h-screen flex-col gap-4 px-2 py-3 pb-8 sm:p-4`}>
       <Header
         activeTab={activeTab}
         onChangeTab={setActiveTab}

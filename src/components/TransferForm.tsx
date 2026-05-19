@@ -128,16 +128,16 @@ export function TransferForm({ balance, onSubmit }: TransferFormProps) {
   const projectedBalance = balance - form.value;
 
   return (
-    <section className="rounded-2xl bg-white p-6 shadow dark:bg-slate-900">
+    <section className="rounded-2xl bg-white p-4 shadow dark:bg-slate-900 sm:p-6">
       <div className="mb-6 flex flex-col gap-3">
-        <h2 className="m-0 text-2xl font-semibold">Transferencia</h2>
-        <p className="m-0 text-sm text-slate-600 dark:text-slate-400">
+        <h2 className="m-0 text-xl font-semibold sm:text-2xl">Transferencia</h2>
+        <p className="m-0 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
           Escolha a modalidade, informe os dados do favorecido e confirme o valor.
         </p>
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[2fr,1fr]">
-        <form onSubmit={handleSubmit} className="grid gap-4">
+      <div className="grid gap-5 lg:grid-cols-[2fr,1fr]">
+        <form onSubmit={handleSubmit} className="grid gap-3 sm:gap-4">
           <fieldset className="grid gap-2 rounded-2xl border border-slate-200 p-4 dark:border-slate-700">
             <legend className="px-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Forma de transferencia</legend>
             <div className="grid gap-2 sm:grid-cols-2">
@@ -153,7 +153,7 @@ export function TransferForm({ balance, onSubmit }: TransferFormProps) {
                   }`}
                 >
                   <p className="m-0 text-sm font-semibold">{option.label}</p>
-                  <p className="m-0 mt-1 text-xs text-slate-500 dark:text-slate-400">{option.subtitle}</p>
+                  <p className="m-0 mt-1 text-[11px] text-slate-500 dark:text-slate-400">{option.subtitle}</p>
                 </button>
               ))}
             </div>
@@ -171,7 +171,7 @@ export function TransferForm({ balance, onSubmit }: TransferFormProps) {
             {form.method === "pix" ? (
               <input
                 type="text"
-                placeholder="Chave PIX (CPF, email, telefone ou aleatoria)"
+                placeholder="Chave PIX (CPF, email ou telefone)"
                 value={form.pixKey}
                 onChange={(e) => update("pixKey", e.target.value)}
                 className="rounded-xl border border-slate-300 px-3 py-2 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
@@ -213,7 +213,7 @@ export function TransferForm({ balance, onSubmit }: TransferFormProps) {
                   key={value}
                   type="button"
                   onClick={() => applyQuickValue(value)}
-                  className="rounded-lg border border-bank-500 px-3 py-1 text-xs font-semibold text-bank-700 transition hover:bg-bank-50 dark:border-bank-100 dark:text-bank-100 dark:hover:bg-bank-900/40"
+                  className="min-w-[5.8rem] flex-1 rounded-lg border border-bank-500 px-3 py-1 text-xs font-semibold text-bank-700 transition hover:bg-bank-50 dark:border-bank-100 dark:text-bank-100 dark:hover:bg-bank-900/40 sm:flex-none"
                 >
                   {brl.format(value)}
                 </button>
@@ -242,7 +242,7 @@ export function TransferForm({ balance, onSubmit }: TransferFormProps) {
 
         <aside className="h-fit rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-950/40">
           <h3 className="m-0 text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-400">Resumo da operacao</h3>
-          <div className="mt-4 grid gap-2 text-sm">
+          <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-sm lg:grid-cols-1">
             <p className="m-0 text-slate-600 dark:text-slate-400">Modalidade</p>
             <p className="m-0 font-semibold">{methodOptions.find((option) => option.id === form.method)?.label}</p>
 

@@ -187,7 +187,7 @@ export function MonthlyFlowChart({ transactions }: MonthlyFlowChartProps) {
   const hoverY = hoverPoint === null ? 0 : yForValue(hoverPoint.cumulative);
 
   return (
-    <section className="rounded-2xl bg-white p-5 shadow dark:bg-slate-900">
+    <section className="rounded-2xl bg-white p-4 shadow dark:bg-slate-900 sm:p-5">
       <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <h3 className="m-0 text-lg">Fluxo do periodo</h3>
@@ -230,7 +230,7 @@ export function MonthlyFlowChart({ transactions }: MonthlyFlowChartProps) {
       </div>
 
       <div className="overflow-x-auto">
-        <svg viewBox={`0 0 ${width} ${height}`} className="h-64 w-full min-w-[700px]">
+        <svg viewBox={`0 0 ${width} ${height}`} className="h-56 w-full min-w-0 sm:h-64">
           {gridLines.map((step) => {
             const y = padding.top + graphHeight * step;
             return (
@@ -346,7 +346,7 @@ export function MonthlyFlowChart({ transactions }: MonthlyFlowChartProps) {
                 strokeDasharray="3 3"
                 className="text-bank-500/70"
               />
-              <g transform={`translate(${hoverX + 12}, ${Math.max(padding.top + 8, hoverY - 36)})`}>
+              <g transform={`translate(${Math.min(width - 136, hoverX + 12)}, ${Math.max(padding.top + 8, hoverY - 36)})`}>
                 <rect width="130" height="42" rx="8" className="fill-slate-900 dark:fill-slate-100" />
                 <text x="10" y="16" className="fill-slate-100 text-[11px] dark:fill-slate-900">
                   Dia {hoverPoint.day}
